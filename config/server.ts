@@ -4,4 +4,8 @@ export default ({ env }) => ({
   app: {
     keys: env.array('APP_KEYS'),
   },
+  webhooks: {
+    populateRelations: env.bool('WEBHOOKS_POPULATE_RELATIONS', false),
+  },
+  url: env('STRAPI_ADMIN_BACKEND_URL', 'https://tbh-cms-production.up.railway.app'),
 });
