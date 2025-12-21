@@ -12,7 +12,7 @@
     "start": "mkdir -p dist && NODE_ENV=production strapi start",
     "start:prod": "NODE_ENV=production strapi start",
     "strapi": "strapi",
-    "postinstall": "npm rebuild sharp",
+    "postinstall": "npm install --platform=linux --arch=x64 sharp",
     "upgrade": "npx @strapi/upgrade latest",
     "upgrade:dry": "npx @strapi/upgrade latest --dry"
   },
@@ -34,9 +34,10 @@
     "typescript": "^5"
   },
   "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.0.0",
     "@swc/core-linux-x64-gnu": "^1.15.7",
     "@swc/core-linux-x64-musl": "^1.15.7",
-    "@rollup/rollup-linux-x64-gnu": "^4.0.0"
+    "sharp-linux-x64": "^0.33.5"
   },
   "engines": {
     "node": ">=20.0.0 <=24.x.x",
