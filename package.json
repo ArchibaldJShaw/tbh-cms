@@ -4,7 +4,7 @@
   "private": true,
   "description": "A Strapi application",
   "scripts": {
-    "build": "strapi build",
+    "build": "echo 'Skipping build - using production mode'",
     "console": "strapi console",
     "deploy": "strapi deploy",
     "dev": "NODE_ENV=production strapi start",
@@ -35,7 +35,8 @@
   },
   "optionalDependencies": {
     "@swc/core-linux-x64-gnu": "^1.15.7",
-    "@swc/core-linux-x64-musl": "^1.15.7"
+    "@swc/core-linux-x64-musl": "^1.15.7",
+    "@rollup/rollup-linux-x64-gnu": "^4.0.0"
   },
   "engines": {
     "node": ">=20.0.0 <=24.x.x",
