@@ -21,7 +21,12 @@ export default ({ env }) => ({
   vite: {
     server: {
       host: '0.0.0.0',
-      allowedHosts: 'all'
+      allowedHosts: [
+        'tbh-cms-production.up.railway.app',
+        'localhost',
+        '127.0.0.1',
+        '.railway.app'
+      ]
     }
   }
 });
