@@ -9,7 +9,7 @@
     "deploy": "strapi deploy",
     "dev": "NODE_ENV=production strapi start",
     "develop": "NODE_ENV=production strapi start",
-    "start": "NODE_ENV=production strapi start",
+    "start": "mkdir -p dist && NODE_ENV=production strapi start",
     "start:prod": "NODE_ENV=production strapi start",
     "strapi": "strapi",
     "postinstall": "npm rebuild sharp",
