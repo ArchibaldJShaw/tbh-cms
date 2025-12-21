@@ -10,6 +10,7 @@
     "dev": "strapi develop",
     "develop": "strapi develop",
     "start": "NODE_ENV=production strapi start",
+    "start:prod": "NODE_ENV=production strapi start",
     "strapi": "strapi",
     "postinstall": "npm rebuild sharp",
     "upgrade": "npx @strapi/upgrade latest",
