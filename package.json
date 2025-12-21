@@ -11,6 +11,7 @@
     "develop": "strapi develop",
     "start": "strapi develop",
     "strapi": "strapi",
+    "postinstall": "npm rebuild sharp",
     "upgrade": "npx @strapi/upgrade latest",
     "upgrade:dry": "npx @strapi/upgrade latest --dry"
   },
@@ -22,6 +23,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
+    "sharp": "^0.34.5",
     "styled-components": "^6.0.0"
   },
   "devDependencies": {
