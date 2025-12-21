@@ -1,0 +1,7 @@
+{
+  "scripts": {
+    "build": "strapi build",
+    "start": "strapi start",
+    "develop": "strapi develop"
+  }
+}
