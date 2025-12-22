@@ -9,7 +9,14 @@ module.exports = (config) => {
       },
     },
     server: {
-      allowedHosts: true
+      allowedHosts: true,
+      hmr: false,
+      ws: false
     },
+    build: {
+      rollupOptions: {
+        external: []
+      }
+    }
   });
 };
