@@ -1,5 +1,3 @@
-// import type { Core } from '@strapi/strapi';
-
 export default {
   /**
    * An asynchronous register function that runs before
@@ -7,7 +5,7 @@ export default {
    *
    * This gives you an opportunity to extend code.
    */
-  register(/* { strapi }: { strapi: Core.Strapi } */) {},
+  register(/*{ strapi }*/) {},
 
   /**
    * An asynchronous bootstrap function that runs before
@@ -16,5 +14,20 @@ export default {
    * This gives you an opportunity to set up your data model,
    * run jobs, or perform some special logic.
    */
-  bootstrap(/* { strapi }: { strapi: Core.Strapi } */) {},
+  async bootstrap({ strapi }) {
+    // Set permissions for public role
+    const publicRole = await strapi
+      .query('plugin::users-permissions.role')
+      .findOne({ where: { type: 'public' } });
+
+    if (publicRole) {
+      await strapi.query('plugin::users-permissions.permission').updateMany({
+        where: {
+          role: publicRole.id,
+          action: ['api::rule-section.rule-section.find', 'api::rule-section.rule-section.findOne']
+        },
+        data: { enabled: true }
+      });
+    }
+  },
 };
