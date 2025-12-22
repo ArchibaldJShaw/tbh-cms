@@ -1,6 +1,6 @@
 export default () => ({
   upload: {
-    enabled: false,
+    enabled: true,
   },
   'users-permissions': {
     enabled: true,
