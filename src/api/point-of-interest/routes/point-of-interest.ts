@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   routes: [
     {
       method: 'GET',
@@ -6,7 +6,6 @@ module.exports = {
       handler: 'point-of-interest.find',
       config: {
         policies: [],
-        middlewares: [],
       },
     },
     {
@@ -15,7 +14,6 @@ module.exports = {
       handler: 'point-of-interest.findOne',
       config: {
         policies: [],
-        middlewares: [],
       },
     },
   ],
