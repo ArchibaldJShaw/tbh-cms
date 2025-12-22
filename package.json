@@ -9,7 +9,7 @@
     "deploy": "strapi deploy",
     "dev": "NODE_ENV=development strapi start",
     "develop": "NODE_ENV=development strapi start",
-    "start": "echo 'Starting Strapi with new schema...' && strapi start",
+    "start": "echo 'Rebuilding with POI schema v2...' && strapi start",
     "prebuild": "strapi build || echo 'Build failed, using existing dist'",
     "start:prod": "NODE_ENV=production strapi start",
     "strapi": "strapi",
