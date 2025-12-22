@@ -18,6 +18,7 @@ export default ({ env }) => ({
   host: env('HOST', '0.0.0.0'),
   port: env.int('PORT', 1337),
   serveAdminPanel: env.bool('STRAPI_ADMIN_SERVE_PANEL', true),
+  forceDevMode: true,
   vite: {
     server: {
       host: '0.0.0.0',
