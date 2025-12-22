@@ -31,7 +31,7 @@
     "category": {
       "type": "string"
     },
-    "locale": {
+    "language": {
       "type": "enumeration",
       "enum": ["ru", "en"],
       "default": "ru",

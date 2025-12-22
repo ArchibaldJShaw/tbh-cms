@@ -43,6 +43,12 @@
     "order": {
       "type": "integer"
     },
+    "language": {
+      "type": "enumeration",
+      "enum": ["ru", "en"],
+      "default": "ru",
+      "required": true
+    },
     "image": {
       "type": "media",
       "multiple": false,
