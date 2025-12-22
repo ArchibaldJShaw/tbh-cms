@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "points_of_interest",
+  "info": {
+    "singularName": "point-of-interest",
+    "pluralName": "points-of-interest",
+    "displayName": "Point of Interest",
+    "description": "Interactive points on the GTA 5 map"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": false
+    },
+    "x_coordinate": {
+      "type": "decimal",
+      "required": true
+    },
+    "y_coordinate": {
+      "type": "decimal",
+      "required": true
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::poi-category.poi-category",
+      "inversedBy": "points_of_interest"
+    },
+    "language": {
+      "type": "enumeration",
+      "enum": ["ru", "en"],
+      "default": "ru",
+      "required": true
+    },
+    "active": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}
