@@ -29,6 +29,11 @@
       "type": "decimal",
       "default": 0.3
     },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::poi-category.poi-category"
+    },
     "language": {
       "type": "enumeration",
       "enum": ["ru", "en"],
@@ -41,6 +46,16 @@
     "active": {
       "type": "boolean",
       "default": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "gallery": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": ["images"]
     }
   }
 }

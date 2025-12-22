@@ -679,9 +679,12 @@ export interface ApiMapZoneMapZone extends Struct.CollectionTypeSchema {
     coordinates: Schema.Attribute.JSON & Schema.Attribute.Required;
     color: Schema.Attribute.String & Schema.Attribute.DefaultTo<'#8b7355'>;
     fillOpacity: Schema.Attribute.Decimal & Schema.Attribute.DefaultTo<0.3>;
+    category: Schema.Attribute.Relation<'manyToOne', 'api::poi-category.poi-category'>;
     language: Schema.Attribute.Enumeration<['ru', 'en']> & Schema.Attribute.DefaultTo<'ru'>;
     order: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
     active: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    image: Schema.Attribute.Media<'images'>;
+    gallery: Schema.Attribute.Media<'images', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
     updatedAt: Schema.Attribute.DateTime;
