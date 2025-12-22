@@ -663,6 +663,35 @@ export interface ApiPointOfInterestPointOfInterest extends Struct.CollectionType
   };
 }
 
+export interface ApiMapZoneMapZone extends Struct.CollectionTypeSchema {
+  collectionName: 'map_zones';
+  info: {
+    displayName: 'Map Zone';
+    pluralName: 'map-zones';
+    singularName: 'map-zone';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.RichText;
+    coordinates: Schema.Attribute.JSON & Schema.Attribute.Required;
+    color: Schema.Attribute.String & Schema.Attribute.DefaultTo<'#8b7355'>;
+    fillOpacity: Schema.Attribute.Decimal & Schema.Attribute.DefaultTo<0.3>;
+    language: Schema.Attribute.Enumeration<['ru', 'en']> & Schema.Attribute.DefaultTo<'ru'>;
+    order: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
+    active: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> & Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::map-zone.map-zone'> & Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1177,6 +1206,7 @@ declare module '@strapi/strapi' {
       'api::faq-item.faq-item': ApiFaqItemFaqItem;
       'api::feature.feature': ApiFeatureFeature;
       'api::lore-section.lore-section': ApiLoreSectionLoreSection;
+      'api::map-zone.map-zone': ApiMapZoneMapZone;
       'api::poi-category.poi-category': ApiPoiCategoryPoiCategory;
       'api::point-of-interest.point-of-interest': ApiPointOfInterestPointOfInterest;
       'api::rule-section.rule-section': ApiRuleSectionRuleSection;
