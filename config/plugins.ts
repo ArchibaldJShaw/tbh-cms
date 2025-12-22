@@ -5,4 +5,7 @@ export default () => ({
   'users-permissions': {
     enabled: true,
   },
+  i18n: {
+    enabled: true,
+  },
 });
